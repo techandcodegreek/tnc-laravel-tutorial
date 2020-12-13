@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    @include('includes.nav')
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">LaraBlog</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -19,8 +20,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/">Αρχική <span class="sr-only">(current)</span></a>
                 </li>
+                @if (Auth::check())
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('newpost') }}">Νέα αναρτηση <span class="sr-only">(current)</span></a>
+                </li>
+                @endif
                 
             </ul>
             <form class="form-inline my-2 my-lg-0" method="GET" action="{{ route('search') }}">

@@ -5,5 +5,6 @@
         </h5>
         <p class="card-text">{{ $post->body }}</p>
         {{-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
+        <p>Απο: {{ $post->user->name }}</p>
     </div>
 </div>

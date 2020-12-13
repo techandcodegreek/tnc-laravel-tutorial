@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use Auth;
 
 class PostsController extends Controller
 {
@@ -21,6 +22,7 @@ class PostsController extends Controller
             $post = new POST();
             $post->title = $request->get('title');
             $post->body = $request->get('body');
+            $post->user_id = Auth::user()->id;
             if ($post->save()){
                 echo "Η ανάρτηση καταχωρήθηκε επιτυχώς.";
                 return redirect('/posts');

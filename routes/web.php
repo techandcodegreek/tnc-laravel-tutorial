@@ -29,3 +29,7 @@ Route::any('/edit_post/{post}', [PostsController::class, 'edit_post'])->name('po
 Route::get('/delete_post/{post}', [PostsController::class, 'delete_post'])->name('post.delete');
 
 Route::any('/search', [PostsController::class, 'search'])->name('search');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
