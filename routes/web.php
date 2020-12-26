@@ -14,9 +14,9 @@ use App\Http\Controllers\PostsController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+// Route::get('/', function () {
+//     return view('home');
+// })->name('home');
 
 Route::get('/posts', [PostsController::class, 'index'])->name('posts');
 
@@ -29,6 +29,8 @@ Route::any('/edit_post/{post}', [PostsController::class, 'edit_post'])->name('po
 Route::get('/delete_post/{post}', [PostsController::class, 'delete_post'])->name('post.delete');
 
 Route::any('/search', [PostsController::class, 'search'])->name('search');
+
+Route::get('/todo', function(){return view('todo');})->name('todo');
 
 Auth::routes();
 
