@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="viewport" content="initial-scale=1, maximum-scale=1">
 <!-- site metas -->
-<title>Cron</title>
+<title>Lara-Blog</title>
 <meta name="keywords" content="">
 <meta name="description" content="">
 <meta name="author" content="">	
@@ -34,7 +34,11 @@
 <body>
 	<div class="header_main">
 		<div class="container">
-			<div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
+			<div class="logo">
+                {{-- <a href="index.html"><img src="images/logo.png"> --}}
+                <h1>Lara-Blog</h1>
+                A blog for lavavel tutorial
+            </a></div>
 		</div>
 	</div>
 	</div>
