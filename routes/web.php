@@ -20,11 +20,11 @@ Route::get('/', function () {
 
 Route::middleware('auth')->group(function () {
     Route::any('/newpost', [PostsController::class, 'newpost'])->name('newpost');
-    Route::get('/post/{post}', [PostsController::class, 'post'])->name('post');
     Route::any('/edit_post/{post}', [PostsController::class, 'edit_post'])->name('post.edit');
     Route::get('/delete_post/{post}', [PostsController::class, 'delete_post'])->name('post.delete');
 });
 
+Route::get('/post/{post}', [PostsController::class, 'post'])->name('post');
 Route::get('/posts', [PostsController::class, 'index'])->name('posts');
 
 

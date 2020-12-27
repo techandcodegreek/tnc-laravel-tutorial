@@ -34,6 +34,7 @@ class PostsController extends Controller
 
     
     public function edit_post(Post $post, Request $request){
+        if (\Auth::user()->id != $post->user->id) return redirect('posts');
         if ($request->method() == 'POST') {
             $post->title = $request->get('title');
             $post->body = $request->get('body');
@@ -57,6 +58,7 @@ class PostsController extends Controller
     }
 
     public function delete_post(Post $post){
+        if (\Auth::user()->id != $post->user->id) return redirect('posts');
         $post->delete();
         return redirect('posts');
     }
