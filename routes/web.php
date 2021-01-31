@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\CommentsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,8 @@ Route::middleware('auth')->group(function () {
     Route::any('/newpost', [PostsController::class, 'newpost'])->name('newpost');
     Route::any('/edit_post/{post}', [PostsController::class, 'edit_post'])->name('post.edit');
     Route::get('/delete_post/{post}', [PostsController::class, 'delete_post'])->name('post.delete');
+    Route::any('/newcomment/{post}', [CommentsController::class, 'new_comment'])->name('newcomment');
+
 });
 
 Route::get('/post/{post}', [PostsController::class, 'post'])->name('post');

@@ -628,3 +628,12 @@ button.main_bt {
     color: #fff;
     
 }
+
+.post {
+	border: 1px solid gray;
+	margin: 10px;
+}
+
+.comment {
+	border-bottom: 1px dotted black;
+}

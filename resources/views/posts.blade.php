@@ -36,6 +36,7 @@
                                 <h2>
                                     <a href="{{ route('post', $post)}}">{{ $post->title }}</a>
                                 </h2>
+                                <p>Από: {{ $post->user->name }}</p>
                                 {{ $post->body }}
                             </p>
                         </div>
