@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\CommentsController;
+use App\Http\Controllers\UploadsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,9 @@ Route::get('/posts', [PostsController::class, 'index'])->name('posts');
 Route::any('/search', [PostsController::class, 'search'])->name('search');
 
 Route::get('/todo', function(){return view('todo');})->name('todo');
+
+Route::get('/upload', [UploadsController::class, 'index'])->name('upload');
+Route::post('/upload', [UploadsController::class, 'upload'])->name('upload');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
